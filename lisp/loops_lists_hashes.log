@@ -1,0 +1,75 @@
+(dotimes (i 10 i) (prin1 i) 
+  (insert ": I will not obey absurd orders\n"))
+0: I will not obey absurd orders
+1: I will not obey absurd orders
+2: I will not obey absurd orders
+3: I will not obey absurd orders
+4: I will not obey absurd orders
+5: I will not obey absurd orders
+6: I will not obey absurd orders
+7: I will not obey absurd orders
+8: I will not obey absurd orders
+9: I will not obey absurd orders
+10
+
+(setq shopList (list "Potatoes" "Dal"))
+("Potatoes" "Dal")
+
+(dolist (item shopList) (insert "I have to buy " item ".\n"))
+I have to buy Potatoes.
+I have to buy Dal.
+nil
+
+(setq shopHash (make-hash-table :test 'equal))
+#s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data ( ...))
+(puthash "Potatoes" 3 shopHash)
+3
+(puthash "Dal" 6 shopHash)
+6
+
+(setq lentil "Dal")
+"Dal"
+
+(gethash lentil shopHash)
+6
+
+(defun aislesToVisit () "Number of aisles to visit"
+       (dolist (item shopList)
+	 (insert "Aisle " (number-to-string (gethash item shopHash)) "\n")))
+aislesToVisit
+
+(aislesToVisit)
+Aisle 3
+Aisle 6
+nil
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
